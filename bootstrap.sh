@@ -86,18 +86,29 @@ function add_eclipse_to_main_menu() {
 }
 
 function setup_rime_im() {
-    # update the /usr/share/rime-data/default.yaml file to put Simplified CHN first
-    mv /usr/share/rime-data/default.yaml /usr/share/rime-data/default.yaml.bak
-    mv default.yaml /usr/share/rime-data/default.yaml
-    # update the fcitx profile to enable RIME by default
-    mv /usr/share/fcitx/configdesc/profile.desc /usr/share/fcitx/configdesc/profile.desc.bak
-    mv profile.desc /usr/share/fcitx/configdesc/profile.desc
-}
-
-function setup_user_skeleton() {
     entering ${FUNCNAME[0]}
 
-    # Desktop shortcuts
+    # update RIME default config to put Simplified CHN first
+    rm -f /usr/share/rime-data/default.yaml
+    mv default.yaml /usr/share/rime-data/default.yaml
+
+    # update fcitx profile to enable RIME by default
+    rm -f /usr/share/fcitx/configdesc/profile.desc
+    mv profile.desc /usr/share/fcitx/configdesc/profile.desc
+
+    # set fcitx trigger key to ALT+LSHIFT
+    mkdir -p /etc/skel/.config/fcitx
+    echo "[Hotkey]" >> /etc/skel/.config/fcitx/config
+    echo "TriggerKey=ALT_LSHIFT" >> /etc/skel/.config/fcitx/config
+
+    # auto start fcitx on a per user basis, so root and kido won't be affected
+    mkdir -p /etc/skel/.config/autostart/
+    cp /usr/share/fcitx/xdg/autostart/fcitx-autostart.desktop /etc/skel/.config/autostart/
+}
+
+function create_desktop_shortcuts() {
+    entering ${FUNCNAME[0]}
+
     mkdir -p /etc/skel/Desktop
     cat >/etc/skel/Desktop/code.desktop <<EOL
 [Desktop Entry]
@@ -120,10 +131,26 @@ Name=LXTerminal
 Icon=lxterminal
 URL=/usr/share/applications/lxterminal.desktop
 EOL
+    cat >/etc/skel/Desktop/lxterminal.desktop <<EOL
+[Desktop Entry]
+Type=Link
+Name=Firefox Web Browser
+Icon=firefox
+URL=/usr/share/applications/firefox.desktop
+EOL
+}
 
-    # start fcitx input method for users
-    mkdir -p /etc/skel/.config/autostart/
-    cp /usr/share/fcitx/xdg/autostart/fcitx-autostart.desktop /etc/skel/.config/autostart/
+function setup_user_defaults() {
+    entering ${FUNCNAME[0]}
+
+    # eclipse shortcut in main menu
+    add_eclipse_to_main_menu
+
+    # RIME input method
+    setup_rime_im
+
+    # Desktop shortcuts
+    create_desktop_shortcuts
 
     # disable update-notifier for all users
     sed -i 's/KDE;/KDE;LXDE;' /etc/xdg/autostart/update-notifier.desktop
@@ -158,9 +185,7 @@ disable_auto_update
 disable_touchpad
 update_apt_sources
 install_packages
-add_eclipse_to_main_menu
-setup_rime_im
-setup_user_skeleton
+setup_user_defaults
 create_users
 change_kido_passwd
 popd
