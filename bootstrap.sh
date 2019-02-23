@@ -96,6 +96,8 @@ function setup_rime_im() {
 
 function setup_user_skeleton() {
     entering ${FUNCNAME[0]}
+
+    # Desktop shortcuts
     mkdir -p /etc/skel/Desktop
     cat >/etc/skel/Desktop/code.desktop <<EOL
 [Desktop Entry]
@@ -118,10 +120,16 @@ Name=LXTerminal
 Icon=lxterminal
 URL=/usr/share/applications/lxterminal.desktop
 EOL
+
+    # start fcitx input method for users
     mkdir -p /etc/skel/.config/autostart/
     cp /usr/share/fcitx/xdg/autostart/fcitx-autostart.desktop /etc/skel/.config/autostart/
+
+    # disable update-notifier for all users
     sed -i 's/KDE;/KDE;LXDE;' /etc/xdg/autostart/update-notifier.desktop
 
+    # make wifi auto connection available to all users
+    sed -i 's/permissions=.*/permissions=/' /etc/NetworkManager/system-connections/*
 }
 
 function create_users() {
