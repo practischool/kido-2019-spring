@@ -1,3 +1,40 @@
-# Test
+## 一、修改密码
 
-let's see how this markdown will be rendered.
+1. 登录系统。用户名为姓名拼音的首字母，如张三则为`zs`。所有人的初始密码都一样，为`kido`。
+2. 改密码
+   1. 从桌面打开`LXTerminal`
+   2. 输入`passwd`
+   3. 如**下**所示，程序会依次提示你输入当前旧（`current`）密码、新密码（`new`）、确认新密码（`Retype new`）。
+    ```
+    zs@kido00:~$ passwd
+    Changing password for zs.
+    (current) UNIX password: 
+    Enter new UNIX password: 
+    Retype new UNIX password: 
+    passwd: password updated successfully
+    ```
+    4. 如**上**所示，如旧密码正确，且两次输入的新密码相同，系统会提示更改成功（`updated successfully`）。
+3. 关闭所有程序，并登出系统：点右下角，然后点`Logout`。
+4. 重新登录，发现已经修改成功，旧密码不再管用。
+
+## 二、浏览网页，并使用中文输入法
+
+1. 打开桌面的火狐浏览器`Firefox Web Browser`。
+2. 在地址栏输入百度网址`baidu.com`。
+3. 按`Alt + 左Shift`键切换成中文输入法。
+4. 输入**“科蚪学堂”**，向后翻页可用句号`.`，向前翻页可用逗号`,`。
+5. 搜索和浏览科蚪学堂相关信息。
+
+## 三、注册本学期的在线课
+
+1. 搜索**“中国大学MOOC”**，进入相应网站。
+2. 注册登录。建议扫微信直接登录。
+3. 登录后，在**“中国大学MOOC”**内搜索**“零基础学Java语言”**课程，并注册该课。
+
+## 四、学习第一周课程`计算`
+
+学堂的课跟这门在线课略有不同，请**务必注意**以下几点：
+
+- 在线视频课`1.1 第一个Java程序`中提到的Java运行时环境（JRE），以及开发软件Eclipse都已经提前为大家装好，双击桌面`Eclipse`即可打开。
+- 在线视频课`1.2 变量与计算`第一个视频中，约50s的位置介绍了自动补全快捷键`Alt + /`。此快捷键是错误的，应为`Ctrl + Space(空格)`。
+- 在线视频课`1.x 如何提交编程作业`与我们的编程作业提交方式不完全一样，但也请大家先学习一下这个视频。
