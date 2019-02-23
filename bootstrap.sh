@@ -153,7 +153,7 @@ function setup_user_defaults() {
     create_desktop_shortcuts
 
     # disable update-notifier for all users
-    sed -i 's/KDE;/KDE;LXDE;' /etc/xdg/autostart/update-notifier.desktop
+    sed -i 's/KDE;/KDE;LXDE;/' /etc/xdg/autostart/update-notifier.desktop
 
     # make wifi auto connection available to all users
     sed -i 's/permissions=.*/permissions=/' /etc/NetworkManager/system-connections/*
