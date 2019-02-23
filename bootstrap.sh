@@ -72,6 +72,7 @@ function install_packages() {
     apt-get install -y git debconf-utils nodejs npm
     apt-get install -y "openjdk-8*" maven
     apt-get install -y fcitx-rime fcitx-frontend-gtk2 fcitx-frontend-gtk3
+    apt-get install -y openssh-server
     # visual studio code
     dpkg -i ./code_1.29.1-1542309157_amd64.deb
     apt-get install -fy
