@@ -1,6 +1,6 @@
 #!/bin/env/ bash
 
-users="lyq lcj lzy wyx lqs cmy ak lmy szy zjr wx mbn mxl dzz"
+users="lyq lcj lzy wyx lqs cmy ak lmy szy zjr wx mbn mxl dzz oy zx"
 admins="wl cys"
 password=kido
 
