@@ -17,7 +17,7 @@
 ## 加入科蚪（10分）
 
 1. 在浏览器中打开[Vijos-科蚪实务学堂2019春季邀请页面][2]，或手动在地址栏中输入并访问https://vijos.org/d/kidolab_2019_Spring/join?code=kidolab2019。
-2. 邀请码（**应该已经自动填好**）为`kido2019`，然后点击`加入`。
+2. 邀请码（**应该已经自动填好**）为`kidolab2019`，然后点击`加入`。
 3. Yeah~！10分到手！
 
 [2]:https://vijos.org/d/kidolab_2019_Spring/join?code=kidolab2019
