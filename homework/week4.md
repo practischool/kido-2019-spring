@@ -5,7 +5,7 @@
   - [`print`函数](#print%E5%87%BD%E6%95%B0)
   - [编程挑战](#%E7%BC%96%E7%A8%8B%E6%8C%91%E6%88%98)
   - [拓展](#%E6%8B%93%E5%B1%95)
-  - [科蚪MUD详细说明](#%E7%A7%91%E8%9A%AAmud%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E)
+  - [Vijos第三题（科蚪MUD）详细说明](#vijos%E7%AC%AC%E4%B8%89%E9%A2%98%E7%A7%91%E8%9A%AAmud%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E)
 
 ## 视频课
 
@@ -57,7 +57,7 @@ public class Main {
 
 ---
 
-## 科蚪MUD详细说明
+## Vijos第三题（科蚪MUD）详细说明
 
 ![Alt text](/imgs/campus.jpeg?raw=true "科蚪MUD地图")
 
