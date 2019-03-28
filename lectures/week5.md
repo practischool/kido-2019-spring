@@ -8,9 +8,6 @@
 4. 上周周三过后，每天的时间投入统计。有没有投入？什么时间投入的？投入了多久？
 5. 做笔记。
 
-[1]:https://vijos.org/d/kidolab_2019_Spring/
-[2]:https://vijos.org/d/kidolab_2019_Spring/discuss
-
 ## 如何做作业
 
 1. 将Vijos默认语言设置为Java：`偏好设置` - `默认代码语言` - `Java`。

@@ -1,4 +1,3 @@
 # Usage
 
-*programming* homework is for online judge like Vijos. `assignment.md` is
-the traditional pencil-and-paper one.
+This directory contains the weekly distributed homework sheet, and some programming exercise (which is later migrated to another private repo).
